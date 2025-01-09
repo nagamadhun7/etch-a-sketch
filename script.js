@@ -1,8 +1,19 @@
 const reset_grid = document.getElementById("reset-grid");
-
+const container = document.getElementById('container');
 
 const createNewGrid = (size) => {
-    console.log(size)
+    container.innerHTML = '';
+    const sqSize = 960/size;
+    for(let i = 0; i < size * size; i++){
+        const sq = document.createElement('div');
+        sq.classList.add('sq');
+        sq.style.width = `${sqSize}px`;
+        sq.style.height = `${sqSize}px`;
+        sq.addEventListener('mouseover', () => {
+            sq.style.backgroundColor = 'black';
+        })
+        container.appendChild(sq)
+    }
 }
 
 reset_grid.addEventListener('click', () => {
