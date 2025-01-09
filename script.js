@@ -11,8 +11,11 @@ const createNewGrid = (size) => {
         sq.style.width = `${sqSize}px`;
         sq.style.height = `${sqSize}px`;
         sq.addEventListener('mouseover', () => {
-            sq.style.backgroundColor = 'black';
-        })
+            const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+                Math.random() * 256
+            )}, ${Math.floor(Math.random() * 256)})`;
+            sq.style.backgroundColor = randomColor;
+        });
         container.appendChild(sq)
     }
 }
@@ -30,5 +33,6 @@ reset_grid.addEventListener('click', () => {
         alert("Please enter between 1 and 100 only")
     }
 })
+
 
 
