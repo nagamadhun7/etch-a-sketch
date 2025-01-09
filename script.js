@@ -1,6 +1,7 @@
 const reset_grid = document.getElementById("reset-grid");
 const container = document.getElementById('container');
 
+
 const createNewGrid = (size) => {
     container.innerHTML = '';
     const sqSize = 960/size;
@@ -16,8 +17,12 @@ const createNewGrid = (size) => {
     }
 }
 
+
+createNewGrid(16)
+
+
 reset_grid.addEventListener('click', () => {
-    const newGrid = prompt("Pleasse enter grid size till 100 only");
+    const newGrid = parseInt(prompt("Please enter grid size (1-100):"), 10);
     if (newGrid > 0 && newGrid <= 100){
         createNewGrid(newGrid)
     }
@@ -25,3 +30,5 @@ reset_grid.addEventListener('click', () => {
         alert("Please enter between 1 and 100 only")
     }
 })
+
+
